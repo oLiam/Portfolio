@@ -1,0 +1,144 @@
+<div class="container">
+
+    <p>
+        <a href="index.php?id=6">Overview</a> -
+        <a href="index.php?id=6&actie=toevoegen_form">Add Blog</a> -
+        <a href="index.php?id=6&actie=archief">Archive</a>
+
+    </p>
+
+    <!-- START BLOCK : ERROR -->
+    <div class="alert alert-danger">
+        <p>{MELDING}</p>
+    </div>
+    <!-- END BLOCK : ERROR -->
+
+    <!-- START BLOCK : SUCCES -->
+    <div class="alert alert-success">
+        <p>{MELDING}</p>
+    </div>
+    <!-- END BLOCK : SUCCES -->
+
+
+
+    <!-- START BLOCK : TEXT -->
+    <p>{MELDING}</p>
+    <!-- END BLOCK : TEXT -->
+
+
+
+    <!-- START BLOCK : OVERZICHT -->
+
+    <!-- START BLOCK : TABEL -->
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+
+        <!-- START BLOCK : TABELRIJ -->
+        <tr>
+            <td>{BLOGID}</td>
+            <td>{TITEL}</td>
+            <td>{INHOUD}</td>
+            <td>{DATUM}</td>
+            <td> [ <a href="index.php?id=6&actie=wijzigen_form&blogid={BLOGID}">Edit</a> ] </td>
+            <td> [ <a href="index.php?id=6&actie=verwijder_form&blogid={BLOGID}">Delete</a> ] </td>
+
+        </tr>
+        <!-- END BLOCK : TABELRIJ  -->
+
+    </table>
+    <!-- END BLOCK : TABEL -->
+
+    <!-- END BLOCK : OVERZICHT -->
+
+    <!-- START BLOCK : FORMULIER -->
+    <form class="form-horizontal" role="form" action="{ACTION}" method="post">
+        <div class="form-group">
+            <label for="inputTitel" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputTitel" placeholder="Titel" name="titel" value="{TITEL}"  {DISABLED}>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <label>
+                    <textarea class="form-control" rows="5" name="inhoud" {DISABLED}>{INHOUD}</textarea>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="blogid" value="{BLOGID}">
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">{BUTTONNAME}</button>
+            </div>
+        </div>
+    </form>
+    <!-- END BLOCK : FORMULIER -->
+
+
+    <!-- START BLOCK : ARCHIEF -->
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Link</th>
+        </tr>
+
+
+        <!-- START BLOCK : RIJ -->
+        <tr>
+            <td>{BLOGID}</td>
+            <td>{TITEL}</td>
+            <td>{DATUM}</td>
+            <td>[ <a href="index.php?id=7&blogid={BLOGID}">Details</a> ]</td>
+        </tr>
+        <!-- END BLOCK : RIJ -->
+
+    </table>
+    <!-- END BLOCK : ARCHIEF -->
+
+
+    <!-- START BLOCK : VERWIJDERFORM -->
+    <form class="form-horizontal" role="form" action="index.php?id=6&actie=verwijderen_opvang" method="post">
+
+        <div class="form-group">
+            <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputTitle" placeholder="Name" name="titel" value="{TITEL}" disabled>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <label>
+                    <textarea class="form-control" rows="5" name="inhoud" disabled>{INHOUD}</textarea>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="blogid"  value="{BLOGID}">
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Delete Blog</button>
+            </div>
+        </div>
+    </form>
+    <!-- END BLOCK : VERWIJDERFORM -->
+
+</div>

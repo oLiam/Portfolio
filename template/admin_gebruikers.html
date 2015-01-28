@@ -1,0 +1,195 @@
+<div class="container">
+
+<p>
+    <a href="index.php?id=5">Overview</a> -
+    <a href="index.php?id=5&actie=toevoegen_form">Add User</a>
+
+</p>
+
+<!-- START BLOCK : ERROR -->
+<div class="alert alert-danger">
+    <p>{MELDING}</p>
+</div>
+<!-- END BLOCK : ERROR -->
+<!-- START BLOCK : SUCCES -->
+<div class="alert alert-success">
+    <p>{MELDING}</p>
+</div>
+<!-- END BLOCK : SUCCES -->
+
+
+
+
+<!-- START BLOCK : OVERZICHT -->
+
+<!-- START BLOCK : TABEL -->
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Group</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+
+    <!-- START BLOCK : TABELRIJ -->
+    <tr>
+        <td>{GEBRUIKER}</td>
+        <td>{NAAM}</td>
+        <td>{USERNAME}</td>
+        <td>{GROEP}</td>
+        <td>[ <a href="index.php?id=5&actie=wijzigen_form&gebrid={GEBRUIKER}">Edit</a> ]</td>
+        <td>[ <a href="index.php?id=5&actie=verwijderen_form&gebrid={GEBRUIKER}">Delete</a> ]</td>
+    </tr>
+    <!-- END BLOCK : TABELRIJ  -->
+
+</table>
+
+<!-- END BLOCK : TABEL -->
+
+<!-- END BLOCK : OVERZICHT -->
+
+
+
+
+<!-- START BLOCK : FORMULIER -->
+<form class="form-horizontal" role="form" action="index.php?id=5&actie=toevoegen_opvang" method="post">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName" placeholder="Name" name="naam">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword1" placeholder="Password" name="password1">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword2" class="col-sm-2 control-label">Repeat Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password2">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputGebdatum" class="col-sm-2 control-label">Date of birth</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputGebdatum" placeholder="Date of birth" name="geb_datum">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+
+            <label>
+                <textarea class="form-control" rows="5" name="beschrijving"></textarea>
+            </label>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Add User</button>
+        </div>
+    </div>
+</form>
+
+<!-- END BLOCK : FORMULIER -->
+
+<!-- START BLOCK : WIJZIGFORM -->
+<form class="form-horizontal" role="form" action="index.php?id=5&actie=wijzigen_opvang" method="post">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName" placeholder="Name" name="naam" value="{NAAM}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username" value="{USERNAME}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{EMAIL}">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+
+            <label>
+                <textarea class="form-control" rows="5" name="beschrijving">{BESCHRIJVING}</textarea>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" name="gebruikerid"    value="{GEBRUIKERSID}">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Edit User</button>
+        </div>
+    </div>
+</form>
+
+<!-- END BLOCK : WIJZIGFORM -->
+
+<!-- START BLOCK : VERWIJDERFORM -->
+<form class="form-horizontal" role="form" action="index.php?id=5&actie=verwijderen_opvang" method="post">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName" placeholder="Name" name="naam" value="{NAAM}" disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username" value="{USERNAME}" disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{EMAIL}" disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+
+            <label>
+                <textarea class="form-control" rows="5" name="beschrijving" disabled>{BESCHRIJVING}</textarea>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" name="gebruikerid"    value="{GEBRUIKERSID}">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Delete User</button>
+        </div>
+    </div>
+</form>
+<!-- END BLOCK : VERWIJDERFORM -->
+
+</div>

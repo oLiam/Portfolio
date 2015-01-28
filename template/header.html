@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="layout/docs-assets/ico/favicon.png">
+
+    <title>Portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="layout/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="layout/Style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="layout/docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Place inside the <head> of your HTML -->
+    <script type="text/javascript" src="template/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Portfolio</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="index.php?id=8">Projects</a></li>
+                <li><a href="index.php?id=7">Blog</a></li>
+
+
+
+                <!-- START BLOCK : UITGELOGD -->
+                <li><a href="index.php?id=2">Registration</a></li>
+                <li><a href="index.php?id=3">Login</a></li>
+                <!-- END BLOCK : UITGELOGD -->
+
+                <!-- START BLOCK : INGELOGD -->
+                <li><a href="index.php?id=4">Logout</a></li>
+                <!-- END BLOCK : INGELOGD -->
+
+                <!-- START BLOCK : ADMIN -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?id=5">Admin Users</a></li>
+                        <li><a href="index.php?id=6">Admin Blog</a></li>
+                        <li><a href="index.php?id=9">Admin Projects</a></li>
+                    </ul>
+                </li>
+                <!-- END BLOCK : ADMIN -->
+
+            </ul>
+
+        </div><!--/.navbar-collapse -->
+    </div>
+</div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+<div class="jumbotron">
+    <!-- START BLOCK : WELKOM -->
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>I am Liam, a novice Web Designer! </p>
+        <p><a class="btn btn-primary btn-lg" role="button">My Work &raquo;</a></p>
+    </div>
+    <!-- END BLOCK : WELKOM -->
+</div>

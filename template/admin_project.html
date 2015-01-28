@@ -1,0 +1,226 @@
+<div class="container">
+
+    <p>
+        <a href="index.php?id=9">Overview</a> -
+        <a href="index.php?id=9&actie=toevoegen_form">Add Project</a> -
+        <a href="index.php?id=9&actie=archief">Archive</a>
+
+    </p>
+
+    <!-- START BLOCK : ERROR -->
+    <div class="alert alert-danger">
+        <p>{MELDING}</p>
+    </div>
+    <!-- END BLOCK : ERROR -->
+
+    <!-- START BLOCK : SUCCES -->
+    <div class="alert alert-success">
+        <p>{MELDING}</p>
+    </div>
+    <!-- END BLOCK : SUCCES -->
+
+
+
+    <!-- START BLOCK : TEXT -->
+    <p>{MELDING}</p>
+    <!-- END BLOCK : TEXT -->
+
+
+
+
+
+    <!-- START BLOCK : TOEVOEGFORM -->
+    <form class="form-horizontal" role="form" action="index.php?id=9&actie=toevoegen_opvang" method="post">
+        <div class="form-group">
+            <label for="inputTitel" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputTitel" placeholder="Title" name="naam">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputStartdate" class="col-sm-2 control-label">Start Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputStartdate" name="startdate">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEnddate" class="col-sm-2 control-label">End Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputEnddate" name="enddate">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <label>
+                    <textarea class="form-control" placeholder="Content" rows="5" name="inhoud"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="gebruikersid"    value="{GEBRUIKERSID}">
+                <button type="submit" class="btn btn-default">Add Project</button>
+            </div>
+        </div>
+    </form>
+    <!-- END BLOCK : TOEVOEGFORM -->
+
+
+
+
+
+    <!-- START BLOCK : OVERZICHT -->
+
+    <!-- START BLOCK : TABEL -->
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        <!-- START BLOCK : TABELRIJ -->
+        <tr>
+            <td>{PROJECTID}</td>
+            <td>{NAAM}</td>
+            <td>{STARTDATE}</td>
+            <td>{ENDDATE}</td>
+            <td> [ <a href="index.php?id=9&actie=wijzigen_form&projectid={PROJECTID}">Edit</a> ] </td>
+            <td> [ <a href="index.php?id=9&actie=verwijder_form&projectid={PROJECTID}">Delete</a> ] </td>
+        </tr>
+        <!-- END BLOCK : TABELRIJ  -->
+
+    </table>
+    <!-- END BLOCK : TABEL -->
+
+    <!-- END BLOCK : OVERZICHT -->
+
+    <!-- START BLOCK : FORMULIER -->
+    <form class="form-horizontal" role="form" action="{ACTION}" method="post">
+        <div class="form-group">
+            <label for="inputTitel" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputTitel" placeholder="Titel" name="titel" value="{NAAM}"  {DISABLED}>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="blogid" value="{PROJECTID}">
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">{BUTTONNAME}</button>
+            </div>
+        </div>
+    </form>
+    <!-- END BLOCK : FORMULIER -->
+
+    <!-- START BLOCK : ARCHIEF -->
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Link</th>
+        </tr>
+
+
+        <!-- START BLOCK : RIJ -->
+        <tr>
+            <td>{PROJECTID}</td>
+            <td>{NAAM}</td>
+            <td>{STARTDATE}</td>
+            <td>{ENDDATE}</td>
+            <td>[ <a href="index.php?id=7&blogid={PROJECTID}">Link</a> ]</td>
+        </tr>
+        <!-- END BLOCK : RIJ -->
+
+    </table>
+    <!-- END BLOCK : ARCHIEF -->
+
+
+    <!-- START BLOCK : WIJZIGFORM -->
+
+    <form class="form-horizontal" role="form" action="index.php?id=9&actie=wijzigen_opvang" method="post">
+        <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" placeholder="Name" name="naam" value="{NAAM}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputStartdate" class="col-sm-2 control-label">Start Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputStartdate" name="startdate" value="{STARTDATE}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEnddate" class="col-sm-2 control-label">End Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputEnddate" name="enddate" value="{ENDDATE}">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <label>
+                    <textarea class="form-control" rows="5" name="inhoud">{INHOUD}</textarea>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="projectid"    value="{PROJECTID}">
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Edit Project</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- END BLOCK : WIJZIGFORM -->
+
+
+    <!-- START BLOCK : VERWIJDERFORM -->
+    <form class="form-horizontal" role="form" action="index.php?id=9&actie=verwijderen_opvang" method="post">
+
+        <div class="form-group">
+            <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputTitle" placeholder="Name" name="naam" value="{NAAM}" disabled>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <label>
+                    <textarea class="form-control" rows="5" name="inhoud" disabled>{INHOUD}</textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" name="projectid"  value="{PROJECTID}">
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Delete Project</button>
+            </div>
+        </div>
+    </form>
+    <!-- END BLOCK : VERWIJDERFORM -->
+
+
+</div>
